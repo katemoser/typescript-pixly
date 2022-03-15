@@ -1,5 +1,9 @@
 ANYTHING IN ALL CAPS IS A PLACEHOLDER like this `NAME_OF_APP`
 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Installations
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 ### Foundations ###
 1. Node (Have this installed on your machine)
 
@@ -39,10 +43,32 @@ https://www.pullrequest.com/blog/intro-to-using-typescript-in-a-nodejs-express-p
 - Look at the API for GetObject. Will need an authorization header
 
 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Development
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+1. To run and compile the front end, use this: npx webpack --watch
+2. To run and compile the back end, use this: npm run build
+ - We can use npm run build, because of the script we've defined for build in our
+ package.json
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Deployment
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 ### Deployment ###
 1. Create a new repo for your front end and one for your back end when you have
 clean, working versions
 
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Educational
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 ### New Concepts ###
 
-piexifjs /exif-js <-- JS libraries for dealing with exif data
+- piexifjs /exif-js <-- JS libraries for dealing with exif data
+- For users submitting data, we use the input type "file" for a form and check
+this link for examples: https://www.w3schools.com/tags/att_input_accept.asp
+- For resizing and other exciting image editing, look into the html <canvas> element.
+Link to that is here: https://imagekit.io/blog/how-to-resize-image-in-javascript/
