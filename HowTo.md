@@ -28,13 +28,19 @@ https://www.pullrequest.com/blog/intro-to-using-typescript-in-a-nodejs-express-p
 
 2. Express PG (ORM): npm install pg
 
-### Database End ###
+### Database ###
 
-### Other ###
+### Object Storage ###
 > AWS S3
+1. install AWS SDK for Javascript (Typescript types are bundled together)
+    - npm install aws-sdk
+
+
 - Look at the API for GetObject. Will need an authorization header
 
 
 ### Deployment ###
 1. Create a new repo for your front end and one for your back end when you have
 clean, working versions
+
+### New Concepts ###
