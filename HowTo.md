@@ -44,3 +44,5 @@ https://www.pullrequest.com/blog/intro-to-using-typescript-in-a-nodejs-express-p
 clean, working versions
 
 ### New Concepts ###
+
+piexifjs /exif-js <-- JS libraries for dealing with exif data
