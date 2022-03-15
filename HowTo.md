@@ -7,14 +7,14 @@ ANYTHING IN ALL CAPS IS A PLACEHOLDER like this `NAME_OF_APP`
 1. Create your React app in TypeScript with: npx create-react-app `NAME_OF_APP` --template typescript 
 
 2. Install react-bootstrap: 
-    npm install react-bootstrap bootstrap@5.1.3
+    - npm install react-bootstrap bootstrap@5.1.3
+
 2a. Add typescript types for react-bootstrap: 
-    npm install --save @types/react-bootstrap
+    - npm install --save @types/react-bootstrap
 
 
 ### Back End ###
 
-TODO: Need to delete and reinstall using typescript instructions from:
 https://www.pullrequest.com/blog/intro-to-using-typescript-in-a-nodejs-express-project/
 
 1. Express: npm install express
@@ -26,13 +26,13 @@ https://www.pullrequest.com/blog/intro-to-using-typescript-in-a-nodejs-express-p
 1d. add build script to package.json: 
     "build": "tsc --project ./"
 
-
 2. Express PG (ORM): npm install pg
 
 ### Database End ###
 
 ### Other ###
 > AWS S3
+- Look at the API for GetObject. Will need an authorization header
 
 
 ### Deployment ###
