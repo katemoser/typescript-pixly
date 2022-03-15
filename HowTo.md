@@ -16,6 +16,8 @@ Installations
 2a. Add typescript types for react-bootstrap: 
     - npm install --save @types/react-bootstrap
 
+3. Install react router DOM: npm install react-router-dom
+
 
 ### Back End ###
 
@@ -72,3 +74,19 @@ Educational
 this link for examples: https://www.w3schools.com/tags/att_input_accept.asp
 - For resizing and other exciting image editing, look into the html <canvas> element.
 Link to that is here: https://imagekit.io/blog/how-to-resize-image-in-javascript/
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+BUGS
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+- When running webpack --watch, we got this error:
+    
+    WARNING in configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value.
+Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/
+
+ERROR in main
+Module not found: Error: Can't resolve './src' in '/Users/kate/Desktop/Rithm/Week-10/typescript-pixly/pixly-fe'
+
+FIX: Had to run `npx webpack watch --mode development` and add (blank) index.js file to ./src
