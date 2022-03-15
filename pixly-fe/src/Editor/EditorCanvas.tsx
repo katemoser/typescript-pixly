@@ -7,8 +7,8 @@
  * hierarchy:
  * 
  */
-function Routes(){
+ function EditorCanvas(){
     return(<div></div>)
 }
 
-export default Routes;
+export default EditorCanvas;

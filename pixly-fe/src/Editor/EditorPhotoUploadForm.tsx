@@ -7,8 +7,8 @@
  * hierarchy:
  * 
  */
-function Routes(){
+ function EditorPhotoUploadForm(){
     return(<div></div>)
 }
 
-export default Routes;
+export default EditorPhotoUploadForm;

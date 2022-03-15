@@ -7,8 +7,8 @@
  * hierarchy:
  * 
  */
-function Routes(){
+ function Postcard(){
     return(<div></div>)
 }
 
-export default Routes;
+export default Postcard;

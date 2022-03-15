@@ -7,8 +7,8 @@
  * hierarchy:
  * 
  */
-function Routes(){
+ function EditorInputForm(){
     return(<div></div>)
 }
 
-export default Routes;
+export default EditorInputForm;

@@ -7,8 +7,8 @@
  * hierarchy:
  * 
  */
-function Routes(){
+ function EditorHandler(){
     return(<div></div>)
 }
 
-export default Routes;
+export default EditorHandler;
