@@ -34,3 +34,5 @@ class Postcard {
       }
 
 }
+
+export default Postcard;
