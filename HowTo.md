@@ -86,7 +86,7 @@ while in production: npm install dotenv
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Development
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-1. To run and compile the front end, use this: npx webpack --watch
+1. To run and compile the front end, use this: npx webpack watch --mode development
 2. To run and compile the back end, use this: npm run build
  - We can use npm run build, because of the script we've defined for build in our
  package.json
