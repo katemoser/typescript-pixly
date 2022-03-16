@@ -55,9 +55,28 @@ while in production: npm install dotenv
 > AWS S3
 1. install AWS SDK for Javascript (Typescript types are bundled together)
     - npm install aws-sdk
+ 2. Enable public access by NOT ONLY making the bucket public, but building a
+ JSON ACL (Access Control List) that allows all access. Follow the path: Bucket ->
+ Permissions -> Bucket Policy. It looks like this:
+
+ Resource: https://www.liainfraservices.com/blog/aws-s3-access-denied-unable-to-grant-public-access-to-an-existing-s3-bucket/
+
+"{
+“Id”: “Policy15434102856”,
+“Version”: “2012-10-17”,
+“Statement”: [
+{
+“Sid”: “Stmt15433597724”,
+“Action”: “s3:*”,
+“Effect”: “Allow”,
+“Resource”: “arn:aws:s3:::bucketname/*”,
+“Principal”: “*”
+}
+]
+}"
 
 
-- Look at the API for GetObject. Will need an authorization header
+- TODO: Look at the API for GetObject. Will need an authorization header
 
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
