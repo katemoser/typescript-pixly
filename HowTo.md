@@ -49,6 +49,8 @@ https://www.pullrequest.com/blog/intro-to-using-typescript-in-a-nodejs-express-p
 3. dotenv (built in type declarations) to protect our .env environmental variables
 while in production: npm install dotenv
 4. All collaborators make their own .env files that will store their personal keys.
+5. install cors soo we can use two different ports: npm install cors
+5a. install cors types : npm i --save-dev @types/cors
 
 
 ### Database ###

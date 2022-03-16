@@ -11,14 +11,15 @@ import PixlyApi from "../Api";
 
 
  interface PostcardProps {
-    demoURL: string
+    demoURL: { url: string}
 }
 
  function Postcard({demoURL}: PostcardProps){
+     console.log("IN POSTCARD, demoURL:", demoURL.url);
 
     return(
     <div>
-        <img src={demoURL} alt="A postcard"/>
+        <img src={demoURL.url} alt="A postcard"/>
     </div>)
 }
 

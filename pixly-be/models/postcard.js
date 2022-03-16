@@ -18,7 +18,7 @@ class Postcard {
     // TODO: build interface for final return object
     // TODO: Build out the table in PSQL
     // TODO: update the argument for our get method
-    static get() {
+    static getSource() {
         return __awaiter(this, void 0, void 0, function* () {
             const url = "https://smc-pixly-resources.s3.us-west-2.amazonaws.com/seattlePostcard.jpeg";
             // const result = await db.query(

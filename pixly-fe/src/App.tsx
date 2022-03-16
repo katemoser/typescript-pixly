@@ -17,7 +17,7 @@ import PixlyApi from './Api';
 function App() {
   console.log("inside of app");
 
-  const [postcard, setPostcard] = useState<string>("");
+  const [postcard, setPostcard] = useState<{url: string}>({url:""});
 
   useEffect(
     function getDemoPostcardOnMount() {

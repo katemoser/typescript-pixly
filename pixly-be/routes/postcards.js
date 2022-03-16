@@ -20,10 +20,8 @@ exports.postcardRoutes = router;
 //TODO: Make a route for accessing a single image
 router.get("/demo", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        const url = yield postcard_1.default.get();
+        const url = yield postcard_1.default.getSource();
         console.log(url);
         return res.json({ url });
     });
 });
-// Type 'Response<any, Record<string, any>>' is missing the following properties 
-// from type 'JSON': parse, stringify, [Symbol.toStringTag]ts(2739)

@@ -13,15 +13,13 @@ import Postcard from "./Postcard/Postcard";
  */
 
 interface RoutesProps {
-    demoURL: string
+    demoURL: {url: string}
 }
 
 function Routing({demoURL}: RoutesProps){
     return(
         <Routes>
-            <Route path="/">
-                <Postcard demoURL={demoURL}/>
-            </Route>
+            <Route path="/" element={<Postcard demoURL={demoURL}/>} />
         </Routes>
     )
 }
