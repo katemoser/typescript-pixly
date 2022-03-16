@@ -22,7 +22,7 @@ router.get("/demo", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const url = yield postcard_1.default.get();
         console.log(url);
-        return res.json(url);
+        return res.json({ url });
     });
 });
 // Type 'Response<any, Record<string, any>>' is missing the following properties 
