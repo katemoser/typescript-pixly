@@ -1,8 +1,9 @@
 import './App.css';
-import {BrowserRouter} from "react-router-dom";
-import Routes from "./Routes";
+import { BrowserRouter } from "react-router-dom";
+import Routing from "./Routing";
 import NavBar from "./NavBar";
-import {useState} from "react";
+import { useState, useEffect } from "react";
+import PixlyApi from './Api';
 
 
 /** App component
@@ -14,15 +15,32 @@ import {useState} from "react";
  * hierarchy:
  */
 function App() {
+  console.log("inside of app");
 
-  const [postcard, setPostcard] = useState(null);
+  const [postcard, setPostcard] = useState<string>("");
 
-  //make an async function that can make axios request and then send down to postcard as props
+  useEffect(
+    function getDemoPostcardOnMount() {
+      console.log("Inside use effect fn for demo")
+      async function fetchDemoPostcard() {
+        console.log("Inside async fn for demo")
+
+        const demoURL = await PixlyApi.getDemoPostcard();
+        console.log("demoURL", demoURL);
+
+        setPostcard(demoURL);
+      }
+      fetchDemoPostcard();
+    },
+    []
+  );
+
+
   return (
     <div className="App">
       <BrowserRouter >
         <NavBar />
-        <Routes />
+        <Routing demoURL={postcard}/>
       </BrowserRouter>
     </div>
   );

@@ -8,12 +8,17 @@ import PixlyApi from "../Api";
  * hierarchy:
  * 
  */
- function Postcard(){
-    const imgURL = await PixlyApi.getDemoPostcard();
+
+
+ interface PostcardProps {
+    demoURL: string
+}
+
+ function Postcard({demoURL}: PostcardProps){
 
     return(
     <div>
-        <img src={imgURL} alt="A postcard"/>
+        <img src={demoURL} alt="A postcard"/>
     </div>)
 }
 
