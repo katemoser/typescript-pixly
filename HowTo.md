@@ -44,6 +44,9 @@ https://www.pullrequest.com/blog/intro-to-using-typescript-in-a-nodejs-express-p
 
 2. Express PG (ORM): npm install pg
 
+3. dotenv (built in type declarations) to protect our .env environmental variables
+while in production: npm install dotenv
+
 ### Database ###
 
 ### Object Storage ###
@@ -89,7 +92,7 @@ Link to that is here: https://imagekit.io/blog/how-to-resize-image-in-javascript
 BUGS
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-- When running webpack --watch, we got this error:
+>>> When running webpack --watch, we got this error:
     
     WARNING in configuration
 The 'mode' option has not been set, webpack will fallback to 'production' for this value.
@@ -100,3 +103,16 @@ ERROR in main
 Module not found: Error: Can't resolve './src' in '/Users/kate/Desktop/Rithm/Week-10/typescript-pixly/pixly-fe'
 
 FIX: Had to run `npx webpack watch --mode development` and add (blank) index.js file to ./src
+
+
+>>> We had issues with our exported PORT const in our config becoming a globally
+declared variable.
+
+FIX: Changed our import / export syntax to the following 
+
+ - import { PORT } from "./config"
+
+ - export {
+  PORT,
+  getDatabaseUri,
+};
