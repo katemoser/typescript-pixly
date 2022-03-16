@@ -1,3 +1,4 @@
+import PixlyApi from "../Api";
 /**
  * 
  * props: 
@@ -8,7 +9,12 @@
  * 
  */
  function Postcard(){
-    return(<div></div>)
+    const imgURL = await PixlyApi.getDemoPostcard();
+
+    return(
+    <div>
+        <img src={imgURL} alt="A postcard"/>
+    </div>)
 }
 
 export default Postcard;

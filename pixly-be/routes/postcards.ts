@@ -6,7 +6,7 @@ const router = express.Router();
 //TODO: Make a route for accessing a single image
 
 router.get("/demo", async function (req: Request, res: Response,) {
-    const url: string = await Postcard.get();
+    const url: string = await Postcard.getSource();
 
     console.log(url);
 

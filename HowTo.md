@@ -28,6 +28,8 @@ Installations
 
 3. Install react router DOM: npm install react-router-dom
 
+4. install axios : npm install axios
+
 
 ### Back End ###
 
