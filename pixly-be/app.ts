@@ -10,8 +10,7 @@ import {postcardRoutes} from "./routes/postcards";
 const app = express();
 
 app.use(express.json());
-// app.get('/', (req, res) => {
-//     res.send('Well done!');
-// })
+
+app.use("/postcards", postcardRoutes);
 
 module.exports = app;

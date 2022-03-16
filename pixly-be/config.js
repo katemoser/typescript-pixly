@@ -1,8 +1,6 @@
 "use strict";
-// TODO: dotenv for typescript
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getDatabaseUri = exports.PORT = void 0;
-// require("dotenv").config();
 require("dotenv/config");
 // Commented out so we don't say the quiet thing out loud
 // const SECRET_KEY = process.env.SECRET_KEY || "secret-dev";
