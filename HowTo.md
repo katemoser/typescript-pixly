@@ -49,8 +49,19 @@ https://www.pullrequest.com/blog/intro-to-using-typescript-in-a-nodejs-express-p
 3. dotenv (built in type declarations) to protect our .env environmental variables
 while in production: npm install dotenv
 4. All collaborators make their own .env files that will store their personal keys.
-5. install cors soo we can use two different ports: npm install cors
+5. install cors so we can use two different ports: npm install cors
 5a. install cors types : npm i --save-dev @types/cors
+6. Install multer so we can encode and then send the FormData/File from back end to
+AWS S3
+6a. install multer-s3 
+    npm install multer
+    npm install multer-s3
+    npm install aws-sdk (types should be included) 
+and types 
+    npm i --save-dev @types/multer 
+    npm i --save-dev @types/multer-s3
+
+
 
 
 ### Database ###

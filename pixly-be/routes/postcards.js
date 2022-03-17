@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.postcardRoutes = void 0;
 const express_1 = __importDefault(require("express"));
 const postcard_1 = __importDefault(require("../models/postcard"));
+const encodeAndUpload_1 = __importDefault(require("../middleware/encodeAndUpload"));
 const router = express_1.default.Router();
 exports.postcardRoutes = router;
 //TODO: Make a route for accessing a single image
@@ -23,5 +24,14 @@ router.get("/demo", function (req, res) {
         const url = yield postcard_1.default.getSource();
         console.log(url);
         return res.json({ url });
+    });
+});
+router.post("/upload", encodeAndUpload_1.default, function (req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        console.log("Reached the upload route in the back end");
+        console.log("This is the file for upload: ", req.file);
+        // const url: string = await Postcard.getSource();
+        // console.log(url);
+        // return res.json({ url });
     });
 });
