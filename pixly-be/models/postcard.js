@@ -1,7 +1,4 @@
 "use strict";
-// TODO: Connect to the Database
-// const db = require("../db");
-// const { NotFoundError } = require("../expressError");
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -11,7 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const db_1 = __importDefault(require("../db"));
 /** Related functions for companies. */
 class Postcard {
     // TODO: update return type
@@ -36,6 +37,25 @@ class Postcard {
             //   ]);
             // let job = result.rows[0];
             return url;
+        });
+    }
+    /** Create a job (from data), update db, return new job data.
+     *
+     * data should be { title, salary, equity, companyHandle }
+     *
+     * Returns { id, title, salary, equity, companyHandle }
+     **/
+    static addUpload({ key, url }) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const result = yield db_1.default.query(`INSERT INTO uploads (key,
+                  url)
+               VALUES ($1, $2)
+               RETURNING key, url`, [
+                key,
+                url,
+            ]);
+            let uploadData = result.rows[0];
+            return uploadData;
         });
     }
 }

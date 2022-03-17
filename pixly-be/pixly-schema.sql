@@ -13,3 +13,8 @@
 --    
 --
 --
+
+CREATE TABLE uploads (
+  key TEXT PRIMARY KEY,
+  url TEXT
+);

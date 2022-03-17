@@ -32,7 +32,12 @@ router.post("/upload", encodeAndUpload_1.upload, function (req, res) {
         console.log("This is the file for upload: ", req.file);
         let url = "";
         if (req.file) {
-            url = yield (0, encodeAndUpload_1.uploadToS3Bucket)(req.file);
+            const response = yield (0, encodeAndUpload_1.uploadToS3Bucket)(req.file);
+            if (response) {
+                console.log("Response object from upload route", response);
+                const dbResponse = yield postcard_1.default.addUpload(response);
+                console.log(dbResponse);
+            }
         }
         // const url: string = await Postcard.getSource();
         // console.log(url);

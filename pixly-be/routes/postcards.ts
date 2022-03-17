@@ -20,13 +20,16 @@ router.post("/upload", upload, async function (req: Request, res: Response,) {
 
     let url = ""
 
-    if(req.file){
+    if (req.file) {
         const response = await uploadToS3Bucket(req.file);
-        const key = response.key;
-        const url = response.url;
+        if (response) {
+            console.log("Response object from upload route", response)
+            const dbResponse = await Postcard.addUpload(response)
+            console.log(dbResponse);
+        }
     }
-    
- 
+
+
 
 
     // const url: string = await Postcard.getSource();

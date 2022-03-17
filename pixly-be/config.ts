@@ -11,8 +11,8 @@ const PORT: number = 5001;
 // Use dev database, testing database, or via env var, production database
 function getDatabaseUri() {
   return (process.env.NODE_ENV === "test")
-      ? "jobly_test"
-      : process.env.DATABASE_URL || "jobly";
+      ? "pixly_test"
+      : process.env.DATABASE_URL || "pixly";
 }
 
 export {
