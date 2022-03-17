@@ -21,9 +21,12 @@ router.post("/upload", upload, async function (req: Request, res: Response,) {
     let url = ""
 
     if(req.file){
-        url = await uploadToS3Bucket(req.file);
+        const response = await uploadToS3Bucket(req.file);
+        const key = response.key;
+        const url = response.url;
     }
     
+ 
 
 
     // const url: string = await Postcard.getSource();

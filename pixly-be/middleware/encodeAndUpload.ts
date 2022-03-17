@@ -18,7 +18,17 @@ const upload = multer().single("fileToUpload")
 const s3 = new S3Client({ region: REGION });
 
 
-
+/**
+ * Uploads an image file too s3 bucket
+ * 
+ * takes file
+ * 
+ * returns object like {
+ * 
+ *  url: "cskdmfsldkfm",
+ *  key: "sldkfsdk"}
+ *
+ */
 async function uploadToS3Bucket(file: any) {
     const key = uuid();
     const putObjectCommand = new PutObjectCommand({
@@ -31,11 +41,16 @@ async function uploadToS3Bucket(file: any) {
     try {
         const data = await s3.send(putObjectCommand);
         console.log("Success", data);
+        const result = {
+            url: `https://${S3_BUCKET_NAME}.s3-${REGION}.amazonaws.com/${key}`,
+            key: key
+        }
+        return result;
+
     } catch (err) {
         console.log("Error", err);
-        return "Error";
+        return null;
     }
-    return `https://${S3_BUCKET_NAME}.s3-${REGION}.amazonaws.com/${key}`
 };
 
 export { upload, uploadToS3Bucket };
