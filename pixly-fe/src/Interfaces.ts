@@ -1,7 +1,8 @@
 // TODO: Should this be lower-case "i"?
 
-function interfaces(){
-    console.log("delete this")
-}
+interface ImageInfoInterface{
+    key: any,
+    url: string
+  }
 
-export default interfaces;
+export type { ImageInfoInterface};

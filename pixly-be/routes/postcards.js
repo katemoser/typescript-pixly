@@ -26,6 +26,19 @@ router.get("/demo", function (req, res) {
         return res.json({ url });
     });
 });
+router.get("/all", function (req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield postcard_1.default.getAll();
+        return res.json(response);
+    });
+});
+router.get("/:key", function (req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const key = req.params.key;
+        const response = yield postcard_1.default.get(key);
+        return res.json(response);
+    });
+});
 router.post("/upload", encodeAndUpload_1.upload, function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         console.log("Reached the upload route in the back end");

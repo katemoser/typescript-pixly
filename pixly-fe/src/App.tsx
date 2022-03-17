@@ -4,6 +4,7 @@ import Routing from "./Routing";
 import NavBar from "./NavBar";
 import { useState, useEffect } from "react";
 import PixlyApi from './Api';
+import {ImageInfoInterface} from "./Interfaces";
 
 
 /** App component
@@ -17,30 +18,26 @@ import PixlyApi from './Api';
 function App() {
   console.log("inside of app");
 
-  const [postcard, setPostcard] = useState<{url: string}>({url:""});
+  const [postcards, setPostcards] = useState<ImageInfoInterface[]>([])
 
   useEffect(
-    function getDemoPostcardOnMount() {
-      console.log("Inside use effect fn for demo")
-      async function fetchDemoPostcard() {
-        console.log("Inside async fn for demo")
-
-        const demoURL = await PixlyApi.getDemoPostcard();
-        console.log("demoURL", demoURL);
-
-        setPostcard(demoURL);
+    function getPostcardsOnMount(){
+      console.log("useEffect getPostcardsOnMount")
+      async function fetchPostcards(){
+        const response = await PixlyApi.getPostcards();
+        setPostcards(response);
       }
-      fetchDemoPostcard();
-    },
-    []
+      fetchPostcards();
+    },[]
   );
 
 
+  //TODO: Need to clean up routes and props etc
   return (
     <div className="App">
       <BrowserRouter >
         <NavBar />
-        <Routing demoURL={postcard}/>
+        <Routing demoURL={postcards}/>
       </BrowserRouter>
     </div>
   );

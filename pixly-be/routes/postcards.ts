@@ -14,6 +14,17 @@ router.get("/demo", async function (req: Request, res: Response,) {
     return res.json({ url });
 });
 
+router.get("/", async function (req: Request, res: Response,){
+    const response = await Postcard.getAll();
+    return res.json(response);
+})
+
+router.get("/:key", async function (req: Request, res: Response,){
+    const key = req.params.key;
+    const response = await Postcard.get(key);
+    return res.json(response);
+})
+
 router.post("/upload", upload, async function (req: Request, res: Response,) {
     console.log("Reached the upload route in the back end")
     console.log("This is the file for upload: ", req.file)

@@ -39,6 +39,22 @@ class Postcard {
             return url;
         });
     }
+    static getAll() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const result = yield db_1.default.query(`SELECT key, url FROM uploads`);
+            console.log("GET ALL:", result.rows);
+            return result.rows;
+        });
+    }
+    static get(key) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const result = yield db_1.default.query(`SELECT key, url 
+        FROM uploads 
+        WHERE key = $1`, [key]);
+            console.log("GET BY KEY:", result.rows[0]);
+            return result.rows[0];
+        });
+    }
     /** Create a job (from data), update db, return new job data.
      *
      * data should be { title, salary, equity, companyHandle }

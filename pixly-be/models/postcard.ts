@@ -38,6 +38,25 @@ class Postcard {
     return url;
   }
 
+  static async getAll(){
+    const result = await db.query(
+      `SELECT key, url FROM uploads`
+    )
+    console.log("GET ALL:", result.rows);
+    return result.rows;
+  }
+
+  static async get(key: string){
+    const result = await db.query(
+      `SELECT key, url 
+        FROM uploads 
+        WHERE key = $1`,
+        [key]
+    )
+    console.log("GET BY KEY:",result.rows[0]);
+    return result.rows[0];
+  }
+
   
 
   /** Create a job (from data), update db, return new job data.
