@@ -4,7 +4,7 @@ import Routing from "./Routing";
 import NavBar from "./NavBar";
 import { useState, useEffect } from "react";
 import PixlyApi from './Api';
-import {ImageInfoInterface} from "./Interfaces";
+import { ImageInfoInterface } from "./Interfaces";
 
 
 /** App component
@@ -21,14 +21,14 @@ function App() {
   const [postcards, setPostcards] = useState<ImageInfoInterface[]>([])
 
   useEffect(
-    function getPostcardsOnMount(){
+    function getPostcardsOnMount() {
       console.log("useEffect getPostcardsOnMount")
-      async function fetchPostcards(){
+      async function fetchPostcards() {
         const response = await PixlyApi.getPostcards();
         setPostcards(response);
       }
       fetchPostcards();
-    },[]
+    }, []
   );
 
 
@@ -37,7 +37,7 @@ function App() {
     <div className="App">
       <BrowserRouter >
         <NavBar />
-        <Routing demoURL={postcards}/>
+        <Routing postcards={postcards} />
       </BrowserRouter>
     </div>
   );

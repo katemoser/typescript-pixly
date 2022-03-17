@@ -1,4 +1,5 @@
-import PixlyApi from "../Api";
+import { PostcardProps } from "../Interfaces";
+
 /**
  * 
  * props: 
@@ -9,17 +10,12 @@ import PixlyApi from "../Api";
  * 
  */
 
-
- interface PostcardProps {
-    demoURL: { url: string}
-}
-
- function Postcard({demoURL}: PostcardProps){
-     console.log("IN POSTCARD, demoURL:", demoURL.url);
+ function Postcard({postcard}: PostcardProps){
 
     return(
-    <div>
-        <img src={demoURL.url} alt="A postcard"/>
+    <div className="Postcard">
+        <div className="postcardImageContainer"></div>
+        <img src={postcard.url} alt="A postcard"/>
     </div>)
 }
 

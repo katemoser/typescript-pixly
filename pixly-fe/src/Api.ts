@@ -8,12 +8,13 @@ const BASE_URL = "http://localhost:5001";
  * 
  */
 class PixlyApi {
-    static async getDemoPostcard() {
-        console.log(`IN PIXLYAPI, GET DEMO POSTCARD, URL: ${BASE_URL}postcards/demo`)
-        const resp = await axios.get(`${BASE_URL}/postcards/demo`);
-        const demoURL = resp.data;
-        console.log(demoURL);
-        return demoURL;
+
+    static async getPostcards() {
+        console.log(`Sending GET /postcards/ request`)
+        const resp = await axios.get(`${BASE_URL}/postcards/`);
+        const postcards = resp.data;
+        console.log(postcards);
+        return postcards;
     }
 
     static async uploadImageToAWS(submittedFormData: FormData) {

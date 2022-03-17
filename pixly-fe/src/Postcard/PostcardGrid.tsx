@@ -1,3 +1,8 @@
+import { PostcardGridProps } from "../Interfaces";
+import Postcard from "./Postcard";
+
+
+
 /**
  * Presentational
  * 
@@ -10,10 +15,11 @@
  * hierarchy:
  * 
  */
- function PostcardGrid(){
+ function PostcardGrid({postcards}: PostcardGridProps){
     return(
-    <div>
+    <div className="PostcardGrid">
       Use our website and have a nicer day afterwards
+      <Postcard postcard={PLACEHOLDER}/>
     </div>
     )
 }

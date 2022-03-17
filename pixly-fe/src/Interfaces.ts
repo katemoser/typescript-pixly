@@ -1,8 +1,30 @@
 // TODO: Should this be lower-case "i"?
 
-interface ImageInfoInterface{
-    key: any,
-    url: string
-  }
+interface ImageInfoInterface {
+  key: any,
+  url: string,
+}
 
-export type { ImageInfoInterface};
+interface RoutesProps {
+  postcards: ImageInfoInterface[],
+}
+
+interface PostcardHandlerProps {
+  postcards: ImageInfoInterface[],
+}
+
+interface PostcardGridProps {
+  postcards: ImageInfoInterface[],
+}
+
+interface PostcardProps {
+  postcard: ImageInfoInterface,
+}
+
+export type {
+  ImageInfoInterface,
+  RoutesProps,
+  PostcardHandlerProps,
+  PostcardGridProps,
+  PostcardProps,
+};

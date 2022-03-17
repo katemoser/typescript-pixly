@@ -1,6 +1,9 @@
 import { Route, Routes } from "react-router";
 import EditorPhotoUploadForm from "./Editor/EditorPhotoUploadForm";
-import Postcard from "./Postcard/Postcard";
+import { RoutesProps } from "./Interfaces";
+import PostcardHandler from "./Postcard/PostcardHandler";
+
+
 
 
 /**
@@ -13,14 +16,10 @@ import Postcard from "./Postcard/Postcard";
  * 
  */
 
-interface RoutesProps {
-    demoURL: {url: string}
-}
-
-function Routing({demoURL}: RoutesProps){
+function Routing({postcards}: RoutesProps){
     return(
         <Routes>
-            <Route path="/" element={<Postcard demoURL={demoURL}/>} />
+            <Route path="/" element={<PostcardHandler postcards={postcards}/>} />
             <Route path="/form" element={<EditorPhotoUploadForm />} />
         </Routes>
         
