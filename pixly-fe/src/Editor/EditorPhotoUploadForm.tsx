@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import PixlyApi from "../Api";
 
 /**
  * 
@@ -10,16 +11,27 @@ import React from "react";
  * 
  */
 function EditorPhotoUploadForm() {
+    const [fileToUpload, setFileToUpload] = useState<File | null>(null);
 
+    //TODO: MOVE THIS API CALL TO THE APP
     function handleSubmission(evt: React.FormEvent) {
         evt.preventDefault();
-        const target = evt.target as HTMLFormElement
-        // const file: EventTarget | Null = evt.target.files;
-        console.log(target.files)
+        if(fileToUpload){
+            PixlyApi.uploadImageToAWS(fileToUpload);
+        }
     }
 
     function handleChange(evt: React.ChangeEvent){
         const target = evt.target as HTMLInputElement
+        const files = target.files;
+        if(files){
+            const file: File = files[0];
+            console.log("FILE:", file);
+            setFileToUpload(file);
+
+        }else{
+            console.log("There was an issue with the file");
+        }
 
         // TODO: figure out target.files[0] and store it in state
         // TODO: Look into file / image encoding when transmitting
