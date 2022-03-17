@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import Postcard from "../models/postcard";
-import upload from "../middleware/encodeAndUpload"
+import { upload, uploadToS3Bucket } from "../middleware/encodeAndUpload"
 
 const router = express.Router();
 
@@ -18,6 +18,12 @@ router.post("/upload", upload, async function (req: Request, res: Response,) {
     console.log("Reached the upload route in the back end")
     console.log("This is the file for upload: ", req.file)
 
+    let url = ""
+
+    if(req.file){
+        url = await uploadToS3Bucket(req.file);
+    }
+    
 
 
     // const url: string = await Postcard.getSource();
@@ -25,6 +31,8 @@ router.post("/upload", upload, async function (req: Request, res: Response,) {
     // console.log(url);
 
     // return res.json({ url });
+
+    return res.send(url);
 });
 
 export { router as postcardRoutes };
