@@ -1,4 +1,5 @@
 import { PostcardProps } from "../Interfaces";
+import "./Postcard.css";
 
 /**
  * 

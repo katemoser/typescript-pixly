@@ -152,3 +152,5 @@ FIX: Changed our import / export syntax to the following
   PORT,
   getDatabaseUri,
 };
+
+BUG: url for aws resouorcces does NOT need the region

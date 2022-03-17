@@ -50,7 +50,7 @@ function uploadToS3Bucket(file) {
             const data = yield s3.send(putObjectCommand);
             console.log("Success", data);
             const result = {
-                url: `https://${S3_BUCKET_NAME}.s3-${REGION}.amazonaws.com/${key}`,
+                url: `https://${S3_BUCKET_NAME}.s3.amazonaws.com/${key}`,
                 key: key
             };
             return result;

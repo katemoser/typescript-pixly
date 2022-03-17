@@ -17,6 +17,14 @@ class PixlyApi {
         return postcards;
     }
 
+    static async getPostcard(key: string) {
+        console.log(`Sending GET /postcard/ request`)
+        const resp = await axios.get(`${BASE_URL}/postcards/${key}`);
+        const postcard = resp.data;
+        console.log(postcard);
+        return postcard;
+    }
+
     static async uploadImageToAWS(submittedFormData: FormData) {
         console.log("Sending image to back end route via Axios");
         console.log("Submitted Form Data", submittedFormData.get("fileToUpload"));

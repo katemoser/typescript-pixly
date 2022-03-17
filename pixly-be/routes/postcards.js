@@ -26,7 +26,7 @@ router.get("/demo", function (req, res) {
         return res.json({ url });
     });
 });
-router.get("/all", function (req, res) {
+router.get("/", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield postcard_1.default.getAll();
         return res.json(response);

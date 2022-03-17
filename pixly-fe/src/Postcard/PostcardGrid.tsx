@@ -19,7 +19,11 @@ import Postcard from "./Postcard";
     return(
     <div className="PostcardGrid">
       Use our website and have a nicer day afterwards
-      <Postcard postcard={PLACEHOLDER}/>
+      <ul>
+
+      {postcards.map(postcardInfo=> 
+        <li><Postcard postcard={postcardInfo} /></li>)}
+      </ul>
     </div>
     )
 }
