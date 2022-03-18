@@ -11,6 +11,7 @@ const REGION = process.env.AWS_REGION; //e.g. "us-east-1"
 
 console.log("In our middleware for uploading")
 
+//middleware multer prepares img for upload
 const upload = multer().single("fileToUpload")
 
 
@@ -18,7 +19,7 @@ const upload = multer().single("fileToUpload")
 const s3 = new S3Client({ region: REGION });
 
 
-/**
+/** 
  * Uploads an image file too s3 bucket
  * 
  * takes file

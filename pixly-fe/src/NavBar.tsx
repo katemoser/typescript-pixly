@@ -1,10 +1,10 @@
-/**
+/**NavBar Component for navigating through the site
  * 
- * props: 
+ * props: none
  * 
- * state:
+ * state: none
  * 
- * hierarchy:
+ * hierarchy: App -> NavBar
  * 
  */
  function NavBar(){

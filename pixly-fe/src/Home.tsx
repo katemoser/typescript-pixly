@@ -1,11 +1,11 @@
 /**
  * Presentational
  * 
- * props: 
+ * props: none
  * 
- * state:
+ * state: none
  * 
- * hierarchy:
+ * hierarchy: Routing -> Home
  * 
  */
  function Home(){

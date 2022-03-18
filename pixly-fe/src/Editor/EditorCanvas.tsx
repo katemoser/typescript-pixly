@@ -4,11 +4,11 @@ import "./EditorCanvas.css";
 
 /**
  * 
- * props: 
+ * props: postcard object {url, key}
  * 
- * state:
+ * state: none (yet)
  * 
- * hierarchy:
+ * hierarchy: Editor Handler -> EditorCanvas
  * 
  */
 function EditorCanvas({ postcard }: EditorCanvasProps) {

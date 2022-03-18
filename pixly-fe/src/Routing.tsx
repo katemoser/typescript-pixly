@@ -9,11 +9,11 @@ import EditorHandler from "./Editor/EditorHandler";
 
 /**
  * 
- * props: 
+ * props: postcards [{url, key}, {...}, ...]
  * 
- * state:
+ * state: none
  * 
- * hierarchy:
+ * hierarchy: App -> Routing -> {PostcardHandler, EditorPhotoUploadForm, EditorHandler}
  * 
  */
 

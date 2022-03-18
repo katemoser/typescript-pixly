@@ -2,13 +2,18 @@ import axios from "axios";
 
 const BASE_URL = "http://localhost:5001";
 /**
- * Api function that talks to the backend via axios
+ * API class with static methods
  * 
- * returns an array like [{id, source}, ...]
+ * Makes AJAX requests tot he backend using axios
  * 
  */
 class PixlyApi {
 
+    /**
+     * Get all postcards 
+     * 
+     * returns an array like [{url, key}, ...]
+     */
     static async getPostcards() {
         console.log(`Sending GET /postcards/ request`)
         const resp = await axios.get(`${BASE_URL}/postcards/`);
@@ -17,6 +22,12 @@ class PixlyApi {
         return postcards;
     }
 
+
+    /**
+     * Get one postcard
+     * 
+     * returns an object like {url, key}
+     */
     static async getPostcard(key: string) {
         console.log(`Sending GET /postcard/ request`)
         const resp = await axios.get(`${BASE_URL}/postcards/${key}`);
@@ -25,6 +36,13 @@ class PixlyApi {
         return postcard;
     }
 
+    /**
+     * upload image to backend
+     * 
+     * takes formData like {fileToUpload: File}
+     * 
+     * returns nothing (TODO: FIX THIS)
+     */
     static async uploadImageToAWS(submittedFormData: FormData) {
         console.log("Sending image to back end route via Axios");
         console.log("Submitted Form Data", submittedFormData.get("fileToUpload"));

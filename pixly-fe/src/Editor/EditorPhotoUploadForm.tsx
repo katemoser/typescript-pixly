@@ -3,11 +3,11 @@ import PixlyApi from "../Api";
 
 /**
  * 
- * props: 
+ * props: none
  * 
- * state:
+ * state: fileToUpload
  * 
- * hierarchy:
+ * hierarchy: App -> Routing -> EditorPhotoUploadForm
  * 
  */
 function EditorPhotoUploadForm() {
@@ -24,6 +24,7 @@ function EditorPhotoUploadForm() {
         }
     }
 
+    //updates changes in form data (when image ready for upload)
     function handleChange(evt: React.ChangeEvent) {
         const target = evt.target as HTMLInputElement
         const files = target.files;

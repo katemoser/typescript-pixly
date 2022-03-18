@@ -1,11 +1,11 @@
 /**
  * Form
  * 
- * props: 
+ * props: none
  * 
- * state:
+ * state: formData
  * 
- * hierarchy:
+ * hierarchy:PostcardHandler -> SearchBar
  * 
  */
  function SearchForm(){

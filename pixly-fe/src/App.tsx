@@ -9,17 +9,19 @@ import { ImageInfoInterface } from "./Interfaces";
 
 /** App component
  * 
- * props:
+ * props: none
  * 
- * state:
+ * state: postcards (current set of all postcard info) like 
+ * [{url, key}, {...}, ...]
  * 
- * hierarchy:
+ * hierarchy: App ->  {Routing, NavBar}
  */
 function App() {
   console.log("inside of app");
 
   const [postcards, setPostcards] = useState<ImageInfoInterface[]>([])
 
+  // gets postcards to display when you load the page.
   useEffect(
     function getPostcardsOnMount() {
       console.log("useEffect getPostcardsOnMount")

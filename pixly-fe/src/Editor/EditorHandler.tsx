@@ -5,11 +5,11 @@ import EditorCanvas from "./EditorCanvas";
 
 /**
  * 
- * props: 
+ * props: none
  * 
- * state:
+ * state: postcard : {url, key}
  * 
- * hierarchy:
+ * hierarchy: App -> Routing -> EditorHandler -> {Editor Canvas, EditorInputForm}
  * 
  */
 function EditorHandler() {

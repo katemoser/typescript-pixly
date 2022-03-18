@@ -2,11 +2,11 @@
  * 
  * FILTERS AND STUFF
  * 
- * props: 
+ * props: none (eventually will be handle submit)
  * 
- * state:
+ * state: formData (eventually, current state of form)
  * 
- * hierarchy:
+ * hierarchy: EditorHandler -> EditorInputForm
  * 
  */
  function EditorInputForm(){

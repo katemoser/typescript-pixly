@@ -6,11 +6,11 @@ import PostcardGrid from "./PostcardGrid";
  * 
  * Will have state and AJAX and other Postcard logic encapsulated here
  * 
- * props: 
+ * props: postcards [{url, key}, {...}, ...]
  * 
- * state:
+ * state: none
  * 
- * hierarchy:
+ * hierarchy: App-> Routing -> PostcardHandler -> PostcardGrid
  * 
  */
  function PostcardHandler({postcards}: PostcardHandlerProps){

@@ -9,11 +9,11 @@ import "./PostcardGrid.css";
  * 
  * Can display all via all route (TODO:) or specific subset based on search params
  * 
- * props: 
+ * props: postcards [{url, key}, {...}, ...]
  * 
- * state:
+ * state: None
  * 
- * hierarchy:
+ * hierarchy: PostcardHandler -> PostcardGrid -> Postcard
  * 
  */
 function PostcardGrid({ postcards }: PostcardGridProps) {

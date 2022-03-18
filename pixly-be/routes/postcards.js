@@ -16,9 +16,14 @@ exports.postcardRoutes = void 0;
 const express_1 = __importDefault(require("express"));
 const postcard_1 = __importDefault(require("../models/postcard"));
 const encodeAndUpload_1 = require("../middleware/encodeAndUpload");
+/**
+ * REST API Routes for Postcards
+ */
 const router = express_1.default.Router();
 exports.postcardRoutes = router;
-//TODO: Make a route for accessing a single image
+/**
+ * Practice Route for testing purposes
+ */
 router.get("/demo", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const url = yield postcard_1.default.getSource();
@@ -26,12 +31,33 @@ router.get("/demo", function (req, res) {
         return res.json({ url });
     });
 });
+/**
+ * Get all postcards
+ *
+ * returns object like:
+ *
+ * {data:
+ * [ {
+ *      url:http://.....,
+ *      key: abcd1234}, {...}, ...]}
+ */
 router.get("/", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield postcard_1.default.getAll();
         return res.json(response);
     });
 });
+/**
+ * Get one postcard info object
+ *
+ * takes key (as url paramater)
+ *
+ * returns object like
+ * {data: {
+ *      url: http://....
+ *      key: abcd1234}
+ * }
+ */
 router.get("/:key", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const key = req.params.key;
@@ -39,6 +65,11 @@ router.get("/:key", function (req, res) {
         return res.json(response);
     });
 });
+/**
+ * POST route to uplooad image to the database
+ *
+ * returns an object like: {data: {url: http://..., key:abcd1234 }}
+ */
 router.post("/upload", encodeAndUpload_1.upload, function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         console.log("Reached the upload route in the back end");

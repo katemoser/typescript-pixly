@@ -1,13 +1,13 @@
 import { PostcardProps } from "../Interfaces";
 import "./Postcard.css";
 
-/**
+/** Presentational Component
  * 
- * props: 
+ * props: postcard {url, key}
  * 
- * state:
+ * state: None
  * 
- * hierarchy:
+ * hierarchy: PostcardGrid -> PostCard
  * 
  */
 
