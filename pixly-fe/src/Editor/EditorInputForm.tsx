@@ -1,5 +1,7 @@
 /**
  * 
+ * FILTERS AND STUFF
+ * 
  * props: 
  * 
  * state:

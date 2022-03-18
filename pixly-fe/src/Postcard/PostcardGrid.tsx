@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { PostcardGridProps } from "../Interfaces";
 import Postcard from "./Postcard";
-
+import "./PostcardGrid.css";
 
 
 /**
@@ -15,17 +16,21 @@ import Postcard from "./Postcard";
  * hierarchy:
  * 
  */
- function PostcardGrid({postcards}: PostcardGridProps){
-    return(
+function PostcardGrid({ postcards }: PostcardGridProps) {
+  return (
     <div className="PostcardGrid">
       Use our website and have a nicer day afterwards
       <ul>
 
-      {postcards.map(postcardInfo=> 
-        <li><Postcard postcard={postcardInfo} /></li>)}
+        {postcards.map(postcardInfo =>
+          <li key={postcardInfo.key}>
+            <Link to={`/postcard/${postcardInfo.key}/edit`}>
+              <Postcard postcard={postcardInfo} />
+            </Link>
+          </li>)}
       </ul>
     </div>
-    )
+  )
 }
 
 export default PostcardGrid;

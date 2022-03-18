@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PixlyApi from "../Api";
+import EditorCanvas from "./EditorCanvas";
+
 /**
  * 
  * props: 
@@ -28,7 +30,11 @@ function EditorHandler() {
             fetchPostcard();
         }, [key]
     );
-    return (<div></div>)
+    return (
+        <div className="EditorHandler">
+            <EditorCanvas postcard={postcard}/>
+        </div>
+    )
 }
 
 export default EditorHandler;

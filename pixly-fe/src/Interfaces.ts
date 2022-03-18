@@ -21,10 +21,15 @@ interface PostcardProps {
   postcard: ImageInfoInterface,
 }
 
+interface EditorCanvasProps {
+  postcard: ImageInfoInterface,
+}
+
 export type {
   ImageInfoInterface,
   RoutesProps,
   PostcardHandlerProps,
   PostcardGridProps,
   PostcardProps,
+  EditorCanvasProps,
 };

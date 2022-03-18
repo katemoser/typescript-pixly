@@ -1,3 +1,6 @@
+import { EditorCanvasProps } from "../Interfaces";
+
+
 /**
  * 
  * props: 
@@ -7,7 +10,7 @@
  * hierarchy:
  * 
  */
- function EditorCanvas(){
+ function EditorCanvas({postcard}: EditorCanvasProps){
     return(<div></div>)
 }
 

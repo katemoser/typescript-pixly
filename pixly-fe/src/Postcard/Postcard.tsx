@@ -11,13 +11,14 @@ import "./Postcard.css";
  * 
  */
 
- function Postcard({postcard}: PostcardProps){
+function Postcard({ postcard }: PostcardProps) {
 
-    return(
-    <div className="Postcard">
-        <div className="postcardImageContainer"></div>
-        <img src={postcard.url} alt="A postcard"/>
-    </div>)
+    return (
+        <div className="Postcard">
+            <div className="postcardImageContainer">
+                <img src={postcard.url} alt="A postcard" />
+            </div>
+        </div>)
 }
 
 export default Postcard;
