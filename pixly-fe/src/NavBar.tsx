@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./NavBar.css";
 
 /**NavBar Component for navigating through the site
  * 
@@ -10,10 +11,10 @@ import { NavLink } from "react-router-dom";
  * 
  */
  function NavBar(){
-    return( <nav>
+    return( <nav className="Pixly-NavBar">
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"/postcards"}>Postcard Collection</NavLink>
-        <NavLink to={"/"}>Postcard Collection</NavLink>
+        <NavLink to={"/form"}>Submit Postcard</NavLink>
     </nav>
     )
 }

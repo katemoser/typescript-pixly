@@ -1,0 +1,30 @@
+.Pixly-NavBar{
+    padding: 1em;
+    background-color: azure;
+    border-bottom:.2em solid darkgray;
+    height: 1.25em;
+}
+
+.Pixly-NavBar a{
+    margin:0 1em;
+    text-decoration: none;
+    color: #333333;
+}
+
+.Pixly-NavBar a:hover{
+    color: darkblue;
+    font-size: larger;
+}
+
+.Pixly-NavBar a.active{
+    margin:0 1em;
+    font-weight: bold;
+}
+
+.Pixly-NavBar .brand {
+    float: left;
+}
+
+.Pixly-NavBar .NavLink {
+    float: right;
+}
