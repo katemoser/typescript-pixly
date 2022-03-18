@@ -21,6 +21,7 @@ const { v4: uuid } = require("uuid");
 const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME;
 const REGION = process.env.AWS_REGION; //e.g. "us-east-1"
 console.log("In our middleware for uploading");
+//middleware multer prepares img for upload
 const upload = (0, multer_1.default)().single("fileToUpload");
 exports.upload = upload;
 // Create S3 service object

@@ -1,3 +1,5 @@
+import { EditorInputFormProps } from "../Interfaces";
+import {useState} from "react";
 /**
  * 
  * FILTERS AND STUFF
@@ -9,40 +11,46 @@
  * hierarchy: EditorHandler -> EditorInputForm
  * 
  */
-function EditorInputForm({ handleSubmit }) {
 
+function EditorInputForm({ updateFilter }: EditorInputFormProps) {
 
+    const [filterSelection, setFilterSelection] = useState<string>("normal");
 
     // TODO: This should handle the changing input values of the form
 
     /** Handles obtaining the input from the form to update state and apply filters */
     function handleChange(evt: React.ChangeEvent<HTMLInputElement>): void {
         // MAKE NOTE OF THE EVENT TYPE AND THE TYPE OF THE GENERIC
-
-        const value = evt.target.value;
-        console.log(value);
+        setFilterSelection(evt.target.value)
         // setFormData(previousData => value);
+    }
+
+    function handleSubmission(evt: React.FormEvent){
+        evt.preventDefault();
+        updateFilter(filterSelection);
     }
 
 
 
 
-
     return (
-        <form className="SearchForm" onSubmit={handleSubmission}>
-            <label htmlFor="userSearchInput">Search: </label>
+        <form className="editForm" onSubmit={handleSubmission}>
+            <h1>Filter: </h1>
+            <label htmlFor="normal">Normal: </label>
             <input
                 id="normal"
-                name="normal"
+                name="filter"
                 type="radio"
-                value={formData}
+                value="normal"
                 onChange={handleChange}
             ></input>
+
+            <label htmlFor="hueRotate">Hue Rotate: </label>
             <input
                 id="hueRotate"
-                name="hueRotate"
+                name="filter"
                 type="radio"
-                value={formData}
+                value="hueRotate"
                 onChange={handleChange}
             ></input>
         </form>

@@ -38,6 +38,10 @@ interface EditorCanvasProps {
   postcard: ImageInfoInterface,
 }
 
+interface EditorInputFormProps {
+  updateFilter : (filter: string)=>void,
+}
+
 export type {
   ImageInfoInterface,
   RoutesProps,
@@ -45,4 +49,5 @@ export type {
   PostcardGridProps,
   PostcardProps,
   EditorCanvasProps,
+  EditorInputFormProps,
 };

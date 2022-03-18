@@ -32,6 +32,10 @@ function EditorHandler() {
         }, [key]
     );
 
+    function updateFilter(filter: string){
+
+    }
+
  
     // TODO: Add handleSubmit to retrieve form data from the InputForm
 
@@ -40,7 +44,7 @@ function EditorHandler() {
     return (
         <div className="EditorHandler">
             <EditorCanvas postcard={postcard}/>
-            <EditorInputForm handleSubmit={handleSubmit}/>
+            <EditorInputForm updateFilter={updateFilter}/>
         </div>
     )
 }

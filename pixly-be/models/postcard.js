@@ -19,6 +19,10 @@ class Postcard {
     // TODO: build interface for final return object
     // TODO: Build out the table in PSQL
     // TODO: update the argument for our get method
+    /**
+     * Practice method for hardcoded url
+     * returns url
+     */
     static getSource() {
         return __awaiter(this, void 0, void 0, function* () {
             const url = "https://smc-pixly-resources.s3.us-west-2.amazonaws.com/seattlePostcard.jpeg";
@@ -39,6 +43,10 @@ class Postcard {
             return url;
         });
     }
+    /**returns a list of postcard info objects like
+     * [{url: hht://..., key: abcd1234}, {...}, ...]
+     *
+     */
     static getAll() {
         return __awaiter(this, void 0, void 0, function* () {
             const result = yield db_1.default.query(`SELECT key, url FROM uploads`);
@@ -46,6 +54,12 @@ class Postcard {
             return result.rows;
         });
     }
+    /**Takes a key (string)
+     *
+     * returns a postcard info object like
+     * {url: hht://..., key: abcd1234}
+     *
+     */
     static get(key) {
         return __awaiter(this, void 0, void 0, function* () {
             const result = yield db_1.default.query(`SELECT key, url 
