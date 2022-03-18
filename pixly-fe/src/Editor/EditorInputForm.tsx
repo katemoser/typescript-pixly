@@ -62,7 +62,7 @@ function EditorInputForm({ updateFilter }: EditorInputFormProps) {
                 ></input>
             </div>
             <div>
-                <label htmlFor="sepia">Sepia: </label>
+                <label htmlFor="sepia">Sadscale: </label>
                 <input
                     id="sepia"
                     name="filter"
@@ -72,7 +72,7 @@ function EditorInputForm({ updateFilter }: EditorInputFormProps) {
                 ></input>
             </div>
             <div>
-                <label htmlFor="saturate">Juicy Fruit: </label>
+                <label htmlFor="saturate">Super Sat: </label>
                 <input
                     id="saturate"
                     name="filter"
