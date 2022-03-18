@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PixlyApi from "../Api";
 import EditorCanvas from "./EditorCanvas";
+import EditorInputForm from "./EditorInputForm";
 
 /**
  * 
@@ -30,9 +31,16 @@ function EditorHandler() {
             fetchPostcard();
         }, [key]
     );
+
+ 
+    // TODO: Add handleSubmit to retrieve form data from the InputForm
+
+
+
     return (
         <div className="EditorHandler">
             <EditorCanvas postcard={postcard}/>
+            <EditorInputForm handleSubmit={handleSubmit}/>
         </div>
     )
 }

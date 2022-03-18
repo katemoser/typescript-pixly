@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express, { Request, response, Response } from "express";
 import Postcard from "../models/postcard";
 import { upload, uploadToS3Bucket } from "../middleware/encodeAndUpload"
 
@@ -51,7 +51,7 @@ router.get("/:key", async function (req: Request, res: Response,) {
     return res.json(response);
 })
 
-/** TODO: CHANGE RETURN, CURRENTLY RETURNS AN EMPTY STRING
+/**
  * POST route to uplooad image to the database
  * 
  * returns an object like: {data: {url: http://..., key:abcd1234 }}
@@ -71,7 +71,7 @@ router.post("/upload", upload, async function (req: Request, res: Response,) {
         }
     }
 
-    return res.send(url);
+    return res.json(response);
 });
 
 export { router as postcardRoutes };

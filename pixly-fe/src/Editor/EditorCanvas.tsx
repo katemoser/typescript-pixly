@@ -17,11 +17,12 @@ function EditorCanvas({ postcard }: EditorCanvasProps) {
 
     useEffect(function () {
         const canvas = canvasRef.current;
-
-
     })
+
     return (
-        <img className="round" src={postcard.url} alt="Postcard Editor" />
+        <div className="EditorCanvas">
+            <img className="round" src={postcard.url} alt="Postcard Editor" />
+        </div>
     )
 }
 
