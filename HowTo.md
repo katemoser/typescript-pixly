@@ -1,9 +1,7 @@
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-TODO WED MORNING
+TODO 
 
-work on express + s3
-build something that lets us pull exif off photoo
-make a  baby version
+Placeholder text
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
@@ -62,6 +60,7 @@ AWS S3
 
 
 ### Database ###
+None
 
 ### Object Storage ###
 > AWS S3
