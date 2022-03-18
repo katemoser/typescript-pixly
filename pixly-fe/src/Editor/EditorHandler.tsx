@@ -34,19 +34,30 @@ function EditorHandler() {
         }, [key]
     );
 
-    function updateFilter(filter: string){
+    function updateFilter(filter: string) {
         setFilter(filter);
     }
 
- 
-    // TODO: Add handleSubmit to retrieve form data from the InputForm
+    //TODO: Lookk into Canvas, useRef
+    // const canvasRef = useRef(null)
+
+    // useEffect(() => {
+    //     const canvas = canvasRef.current
+    //     if (canvas) {
+    //         const context = canvas.getContext('2d')
+    //         //Our first draw
+    //         context.fillStyle = '#000000'
+    //         context.fillRect(0, 0, context.canvas.width, context.canvas.height)
+
+    //     }
+    // }, [])
 
 
 
     return (
         <div className="EditorHandler">
-            <EditorCanvas postcard={postcard} filter={filter}/>
-            <EditorInputForm updateFilter={updateFilter}/>
+            <EditorCanvas postcard={postcard} filter={filter} />
+            <EditorInputForm updateFilter={updateFilter} />
         </div>
     )
 }

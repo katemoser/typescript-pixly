@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 /**NavBar Component for navigating through the site
  * 
  * props: none
@@ -8,7 +10,12 @@
  * 
  */
  function NavBar(){
-    return(<div></div>)
+    return( <nav>
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/postcards"}>Postcard Collection</NavLink>
+        <NavLink to={"/"}>Postcard Collection</NavLink>
+    </nav>
+    )
 }
 
 export default NavBar;

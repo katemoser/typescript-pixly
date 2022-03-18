@@ -53,13 +53,10 @@ while in production: npm install dotenv
 5a. install cors types : npm i --save-dev @types/cors
 6. Install multer so we can encode and then send the FormData/File from back end to
 AWS S3
-6a. install multer-s3 
-    npm install multer
-    npm install multer-s3
+6a. install aws-sdk, multer, and multer types
     npm install aws-sdk (types should be included) 
-and types 
+    npm install multer
     npm i --save-dev @types/multer 
-    npm i --save-dev @types/multer-s3
 
 
 
@@ -90,6 +87,33 @@ and types
 ]
 }"
 
+3. DON'T use multer-s3, instead upload image to express and then use S3-client and PutObjectCommand from aws-sdk to actually upload the image to AWS s3.
+
+        const s3 = new S3Client({ region: REGION });
+
+        async function uploadToS3Bucket(file: any) {
+            const key = uuid();
+            const putObjectCommand = new PutObjectCommand({
+                Bucket: S3_BUCKET_NAME,
+                Key: key,
+                Body: file.buffer,
+                ContentType: "image/jpeg",
+                Tagging: "public=yes"
+            })
+            try {
+                const data = await s3.send(putObjectCommand);
+                console.log("Success", data);
+                const result = {
+                    url: `https://${S3_BUCKET_NAME}.s3.amazonaws.com/${key}`,
+                    key: key
+                }
+                return result;
+
+            } catch (err) {
+                console.log("Error", err);
+                return null;
+            }
+        };
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Development
