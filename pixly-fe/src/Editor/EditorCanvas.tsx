@@ -11,7 +11,7 @@ import "./EditorCanvas.css";
  * hierarchy: Editor Handler -> EditorCanvas
  * 
  */
-function EditorCanvas({ postcard }: EditorCanvasProps) {
+function EditorCanvas({ postcard, filter }: EditorCanvasProps) {
 
     const canvasRef = useRef(null);
 
@@ -21,7 +21,7 @@ function EditorCanvas({ postcard }: EditorCanvasProps) {
 
     return (
         <div className="EditorCanvas">
-            <img className="round" src={postcard.url} alt="Postcard Editor" />
+            <img className={`${filter}`} src={postcard.url} alt="Postcard Editor" />
         </div>
     )
 }

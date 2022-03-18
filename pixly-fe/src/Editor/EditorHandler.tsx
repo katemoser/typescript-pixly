@@ -18,6 +18,8 @@ function EditorHandler() {
 
     const initialPostcard = { url: "", key: "" };
     const [postcard, setPostcard] = useState(initialPostcard);
+    const [filter, setFilter] = useState("normal");
+
 
     useEffect(
         function getPostcardOnMount() {
@@ -33,7 +35,7 @@ function EditorHandler() {
     );
 
     function updateFilter(filter: string){
-
+        setFilter(filter);
     }
 
  
@@ -43,7 +45,7 @@ function EditorHandler() {
 
     return (
         <div className="EditorHandler">
-            <EditorCanvas postcard={postcard}/>
+            <EditorCanvas postcard={postcard} filter={filter}/>
             <EditorInputForm updateFilter={updateFilter}/>
         </div>
     )

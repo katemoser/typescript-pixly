@@ -36,6 +36,7 @@ interface PostcardProps {
 interface EditorCanvasProps {
   /**image info like {url, key} */
   postcard: ImageInfoInterface,
+  filter: string,
 }
 
 interface EditorInputFormProps {
