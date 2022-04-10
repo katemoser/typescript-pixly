@@ -1,5 +1,5 @@
 import { EditorInputFormProps } from "../Interfaces";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 /**
  * 
  * FILTERS AND STUFF
@@ -14,14 +14,35 @@ import { useState } from "react";
 
 function EditorInputForm({ updateFilter }: EditorInputFormProps) {
 
+    const initialData= {
+        filter: "normal"
+    }
+
     const [filterSelection, setFilterSelection] = useState<string>("normal");
+    const [formData, setFormData] = useState(initialData);
 
     /** Handles obtaining the input from the form to update state and apply filters */
     function handleChange(evt: React.ChangeEvent<HTMLInputElement>): void {
         // MAKE NOTE OF THE EVENT TYPE AND THE TYPE OF THE GENERIC
+        console.log("CHANGE IN FORM");
 
-        setFilterSelection(evt.target.value)
+        const newFilter = evt.target.value;
+
+        setFormData(currData => {
+            currData["filter"] = newFilter;
+            return { ...currData };
+        });
+
+        setFilterSelection(newFilter)
+        //updateFilter(filterSelection);
     }
+
+    useEffect(
+        function applyFilter(){
+            console.log("useEffect apply filter")
+            updateFilter(filterSelection);
+        }, [formData]
+    )
 
     function handleSubmission(evt: React.FormEvent) {
         evt.preventDefault();

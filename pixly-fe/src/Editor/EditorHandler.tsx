@@ -51,9 +51,6 @@ function EditorHandler() {
 
     //     }
     // }, [])
-
-
-
     return (
         <div className="EditorHandler">
             <EditorCanvas postcard={postcard} filter={filter} />
